@@ -1,0 +1,2734 @@
+COMMENT
+{
+    This defines our data structures in a more maintainable and
+    readable manner than raw .cpp files.
+}
+
+DEFINE ELEMENT
+{
+    CST		name		"ether"
+}
+
+ELEMENT NONE
+{
+    name		"none"
+}
+
+ELEMENT PHYSICAL
+{
+    name		"physical"
+}
+
+ELEMENT POISON
+{
+    name		"poison"
+}
+
+ELEMENT FIRE
+{
+    name		"fire"
+}
+
+ELEMENT COLD
+{
+    name		"cold"
+}
+
+ELEMENT ACID
+{
+    name		"acid"
+}
+
+ELEMENT LIGHT
+{
+    name		"light"
+}
+
+DEFINE ATTACKSTYLE
+{
+}
+
+ATTACKSTYLE MELEE
+ATTACKSTYLE RANGE
+ATTACKSTYLE INTERNAL
+
+DEFINE ROOMTYPE
+{
+    CST		prefix		""
+    bool	randomorient	true
+    s16		depth		0
+    u8		ngold		1
+    u8		nitem		1
+    u8		nmob		3
+
+    u8		wall_r		192	
+    u8		wall_g		192	
+    u8		wall_b		192	
+
+    ENM		item_find	ITEM		NONE
+    u8		item_findchance	0
+    bool	allowportal	true
+
+    ENMLIST	mandatoryitem	ITEM		NONE
+}
+
+ROOMTYPE NONE
+{
+    prefix	"x"
+}
+
+ROOMTYPE VILLAGE
+{
+    prefix	"village"
+    randomorient	false
+    depth		0
+    ngold		0
+    nitem		0
+    nmob		0
+    allowportal		false
+}
+
+ROOMTYPE RAT
+{
+    prefix	"r"
+    depth	1
+
+    wall_r		192	
+    wall_g		128	
+    wall_b		64	
+
+    item_find		BOOK_INTRO
+    item_findchance	5
+
+    mandatoryitem	KOBOLDDAGGER
+}
+
+ROOMTYPE KOBOLD
+{
+    prefix	"r"
+    depth	2
+
+    wall_r		192	
+    wall_g		128	
+    wall_b		192	
+
+    item_find		BOOK_PORTAL
+    item_findchance	5
+
+    mandatoryitem	BRONZESWORD
+    mandatoryitem	ARMOUR_LEATHER
+}
+
+ROOMTYPE SLIME
+{
+    prefix	"r"
+    depth	3
+
+    wall_r		128	
+    wall_g		192	
+    wall_b		128	
+
+    item_find		BOOK_FIREBALL
+    item_findchance	5
+
+    mandatoryitem	IRONSWORD
+    mandatoryitem	ARMOUR_STUDDEDLEATHER
+    mandatoryitem	CRUDEBOW
+}
+
+ROOMTYPE LICH
+{
+    prefix	"r"
+    depth	4
+
+    wall_r		192	
+    wall_g		192	
+    wall_b		128	
+
+    item_find		BOOK_HEAL
+    item_findchance	5
+
+    mandatoryitem	STEELSWORD
+    mandatoryitem	ARMOUR_CHAIN
+    mandatoryitem	SHORTBOW
+}
+
+ROOMTYPE ICE
+{
+    prefix	"r"
+    depth	5
+
+    wall_r		128	
+    wall_g		128	
+    wall_b		192	
+
+    item_find		BOOK_FIRESTORM
+    item_findchance	5
+
+    mandatoryitem	CRYSTALSWORD
+    mandatoryitem	ARMOUR_PLATE
+    mandatoryitem	LONGBOW
+}
+
+ROOMTYPE PENULTIMATE
+{
+    prefix	"r"
+    depth	0
+
+    wall_r		192	
+    wall_g		192	
+    wall_b		192	
+
+    ngold		0
+    nitem		0
+    nmob		0
+
+    item_find		BOOK_PENULTIMATE
+    item_findchance	5
+    allowportal		false
+}
+
+DEFINE YELL
+{
+}
+
+YELL KEEPOUT
+YELL MURDERER
+YELL INVADER
+YELL KILL
+YELL KILLCHASE
+YELL LOCATION
+YELL HEARDLOCATION
+YELL TAUNT
+YELL VICTORY
+YELL RANGED
+
+
+DEFINE OPTION
+{
+    CST		name	"None"
+}
+
+OPTION INSTRUCTIONS
+{
+    name	"Instructions"
+}
+
+OPTION PLAY
+{
+    name	"Play"
+}
+
+OPTION COINS
+{
+    name	"Toggle Coins"
+}
+
+OPTION FULLSCREEN
+{
+    name	"Toggle Full Screen"
+}
+
+OPTION QUIT
+{
+    name	"Quit"
+}
+
+DEFINE ACTION
+{
+}
+
+ACTION NONE
+ACTION RESTART
+ACTION BUMP
+ACTION FIRE
+ACTION ROTATE
+ACTION REBOOTAVATAR
+ACTION DROP
+ACTION BREAK
+ACTION INSPECT
+ACTION QUAFF
+ACTION EAT
+ACTION SUICIDE
+ACTION MEDITATE
+ACTION SEARCH
+ACTION WAIT
+ACTION EXAMINE
+ACTION SAVE
+ACTION CREATEITEM
+ACTION CAST
+ACTION SHOP
+ACTION THROW
+ACTION WEAR
+
+DEFINE SHOP
+{
+}
+
+SHOP NONE
+SHOP HEAL
+SHOP FIX
+SHOP BUY
+SHOP GOSSIP
+SHOP ID
+SHOP REMOVEITEM
+
+DEFINE GOSSIP
+{
+    CST		name		"none"
+}
+
+GOSSIP INTRO
+{
+    name	"intro"
+}
+
+GOSSIP MEDITATE
+{
+    name	"meditate"
+}
+
+GOSSIP SICKNESS
+{
+    name	"sickness"
+}
+
+GOSSIP IMPASS
+{
+    name	"impass"
+}
+
+GOSSIP COLD
+{
+    name	"cold"
+}
+
+GOSSIP ORCS
+{
+    name	"orcs"
+}
+
+DEFINE ATTR
+{
+    U8		bg_r		0
+    U8		bg_g		0
+    U8		bg_b		0
+    U8		fg_r		255
+    U8		fg_g		255
+    U8		fg_b		255
+    bool	pulse		false
+}
+
+ATTR NONE
+{
+}
+
+ATTR HEALTH
+{
+    bg_r		255
+    bg_g		0
+    bg_b		0
+    fg_r		0
+    fg_g		0
+    fg_b		0
+}
+
+ATTR MANA
+{
+    bg_r		0
+    bg_g		128
+    bg_b		0
+    fg_r		255
+    fg_g		255
+    fg_b		255
+}
+
+ATTR POWERBAR
+{
+    bg_r		16
+    bg_g		96
+    bg_b		16
+    fg_r		192
+    fg_g		192
+    fg_b		192
+}
+
+ATTR BORDER
+{
+    bg_r		255
+    bg_g		192
+    bg_b		128
+    fg_r		255
+    fg_g		255
+    fg_b		255
+}
+
+ATTR VICTORYBORDER
+{
+    bg_r		128
+    bg_g		128
+    bg_b		0
+    fg_r		255
+    fg_g		255
+    fg_b		255
+}
+
+ATTR DEATHBORDER
+{
+    bg_r		64
+    bg_g		64
+    bg_b		64
+    fg_r		255
+    fg_g		255
+    fg_b		255
+}
+
+ATTR DEATHBAR
+{
+    bg_r		96
+    bg_g		32
+    bg_b		32
+    fg_r		192
+    fg_g		192
+    fg_b		192
+}
+
+ATTR WAITBAR
+{
+    bg_r		96
+    bg_g		32
+    bg_b		32
+    fg_r		192
+    fg_g		192
+    fg_b		192
+}
+
+ATTR INVULNERABLE
+{
+    bg_r		196
+    bg_g		196
+    bg_b		196
+    fg_r		0
+    fg_g		0
+    fg_b		0
+
+}
+
+ATTR HILITE
+{
+    bg_r		255
+    bg_g		255
+    bg_b		255
+    fg_r		0
+    fg_g		0
+    fg_b		0
+
+}
+
+ATTR AVATARMEDITATE
+{
+    bg_r		64
+    bg_g		196
+    bg_b		255
+    fg_r		0
+    fg_g		0
+    fg_b		0
+
+}
+
+ATTR ELECTRICBLUE
+{
+    bg_r		0
+    bg_g		16
+    bg_b		32
+    fg_r		32
+    fg_g		128
+    fg_b		255
+
+}
+
+ATTR METAL
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		32
+    fg_g		128
+    fg_b		196
+
+}
+
+ATTR BLUEPORTAL
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		20
+    fg_g		30
+    fg_b		128
+
+    pulse		true
+}
+
+ATTR ORANGEPORTAL
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		128
+    fg_g		96
+    fg_b		32
+
+    pulse		true
+}
+
+ATTR FIRE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		192
+    fg_g		128
+    fg_b		64
+
+    pulse		true
+}
+
+ATTR SEARCH
+{
+    bg_r		196
+    bg_g		196
+    bg_b		0
+    fg_r		0
+    fg_g		0
+    fg_b		0
+}
+
+ATTR GOLD
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		255
+    fg_b		0
+
+}
+
+ATTR YELLOW
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		255
+    fg_b		0
+
+}
+
+ATTR SHOUT
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		128
+    fg_g		255
+    fg_b		128
+}
+
+ATTR EMOTE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		196
+    fg_b		128
+
+}
+
+ATTR PINK
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		128
+    fg_b		128
+}
+
+ATTR PURPLE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		128
+    fg_b		255
+}
+
+ATTR KOBOLD_ARCHER
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		153
+    fg_g		51
+    fg_b		0
+}
+
+ATTR KOBOLD_MAGE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		102
+    fg_g		0
+    fg_b		255
+}
+
+ATTR KOBOLD_GUARD
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		220
+    fg_g		196
+    fg_b		255
+}
+
+ATTR KOBOLD_BAKER
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		204
+    fg_g		153
+    fg_b		0
+}
+
+ATTR NORMAL
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		192
+    fg_g		192
+    fg_b		192
+
+}
+
+ATTR LIGHTBLACK
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		96
+    fg_g		96
+    fg_b		96
+
+}
+
+ATTR OUTOFFOV
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		96
+    fg_g		96
+    fg_b		96
+
+}
+
+ATTR WHITE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		255
+    fg_b		255
+
+}
+
+ATTR ORANGE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		192
+    fg_b		64
+
+}
+
+ATTR LIGHTBROWN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		192
+    fg_b		128
+
+}
+
+ATTR BROWN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		192
+    fg_g		128
+    fg_b		64
+
+}
+
+ATTR RED
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		255
+    fg_g		32
+    fg_b		32
+
+}
+
+ATTR DKRED
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		196
+    fg_g		32
+    fg_b		32
+
+}
+
+ATTR GREEN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		0
+    fg_g		255
+    fg_b		0
+
+}
+
+ATTR GREEN_ISLE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		192
+    fg_r		0
+    fg_g		255
+    fg_b		0
+
+}
+
+ATTR DKGREEN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		0
+    fg_g		196
+    fg_b		0
+
+}
+
+ATTR BLUE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		64
+    fg_g		64
+    fg_b		255
+
+}
+
+ATTR LIGHTBLUE
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		128
+    fg_g		128
+    fg_b		255
+}
+
+ATTR TEAL
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		64
+    fg_g		128
+    fg_b		128
+
+}
+
+ATTR CYAN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		64
+    fg_g		255
+    fg_b		255
+
+}
+
+ATTR DKCYAN
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		64
+    fg_g		192
+    fg_b		192
+
+}
+
+ATTR GREY
+{
+    bg_r		0
+    bg_g		0
+    bg_b		0
+    fg_r		196
+    fg_g		196
+    fg_b		196
+
+}
+
+DEFINE MAPFLAG
+{
+}
+
+DEFINE TRAP
+{
+    U8		sym 	'^'
+    ENM		attr	ATTR		NORMAL
+
+    DICE	damage	1
+    ENM		element	ELEMENT		PHYSICAL
+
+    CST		name	"no-trap"
+    ENM		item	ITEM		NONE
+}
+
+TRAP ARROW
+{
+    sym		'/'
+    attr	BROWN
+
+    damage	1d2
+
+    name	"arrow trap"
+
+    item	ARROW
+}
+
+TRAP LIGHT
+{
+    sym		'^'
+    attr	YELLOW
+
+    damage	0
+    element	LIGHT
+    
+    name	"light trap"
+
+    item	BLIND
+}
+
+TRAP PIT
+{
+    sym		'^'
+    attr	NORMAL
+
+    damage	1d2
+
+    name	"pit trap"
+}
+
+TRAP FIRE
+{
+    sym		'&'
+    attr	FIRE
+
+    damage	1d3
+    element	FIRE
+
+    name	"fire trap"
+}
+
+TRAP ROCK
+{
+    sym		'*'
+    attr	NORMAL
+
+    damage	1d2
+
+    name	"falling rock trap"
+}
+
+TRAP BOULDER
+{
+    sym		'0'
+    attr	NORMAL
+    
+    damage	1d2
+
+    name	"falling boulder trap"
+}
+
+TRAP SPIKEPIT
+{
+    sym		'^'
+    attr	CYAN
+
+    damage	1d3
+
+    name	"spiked pit trap"
+}
+
+
+MAPFLAG NONE 0
+MAPFLAG FOV 1
+MAPFLAG FOVCACHE 2
+MAPFLAG PORTAL 4
+MAPFLAG TRAP 8
+
+DEFINE EVENTTYPE
+{
+}
+
+EVENTTYPE NONE 0
+EVENTTYPE FORE 1
+EVENTTYPE BACK 2
+EVENTTYPE SYM 4
+EVENTTYPE FORESYM 5
+EVENTTYPE FOREBACK 3
+EVENTTYPE ALL 7
+EVENTTYPE SHOUT 8
+
+EVENTTYPE LONG 128
+
+DEFINE TILE
+{
+    U8		symbol		'&'
+    ENM		attr		ATTR		NORMAL
+    CST		legend		"none"
+
+    ENM		delusion	TILE		NONE
+
+    bool	ispassable	true
+    bool	istransparent	true
+    bool	isphaseable	true
+    bool	isdiggable	false
+    bool	roomcolor	false
+    bool	describe	false
+    bool	semitransparent	false
+    bool	forbidrandomwander	false
+}
+
+TILE INVALID
+{
+    symbol	'#'
+    attr	BROWN
+    legend	"wall"
+    ispassable		false
+    istransparent	false
+    isphaseable		false
+}
+
+TILE NONE
+{
+}
+
+TILE STATUE
+{
+    symbol	'K'
+    attr	RED
+    legend	"large kobold statue"
+    ispassable	true
+    istransparent	true
+    describe	true
+}
+
+TILE ALTAR
+{
+    symbol	'_'
+    attr	RED
+    legend	"blood-stained stone altar"
+    ispassable	true
+    istransparent	true
+    describe	true
+}
+
+TILE FLOOR
+{
+    symbol	'.'
+    attr	NORMAL
+    legend	"floor"
+    ispassable		true
+    istransparent	true
+}
+
+TILE CHAIR
+{
+    symbol	'h'
+    attr	BROWN
+    legend	"wooden chair"
+    ispassable		true
+    istransparent	true
+    describe	true
+}
+
+TILE TABLE
+{
+    symbol	'O'
+    attr	LIGHTBROWN
+    legend	"wooden table"
+    ispassable		false
+    istransparent	true
+    describe	true
+}
+
+TILE DOWNSTAIRS
+{
+    symbol	'>'
+    attr	WHITE
+    legend	"downstairs"
+    ispassable		true
+    istransparent 	true
+    describe	true
+}
+
+TILE UPSTAIRS
+{
+    symbol	'.'
+    attr	GREEN
+    legend	"grass"
+    ispassable		true
+    istransparent 	true
+
+    delusion	SNOWYPATH
+}
+
+TILE SNOWYPATH
+{
+    symbol	'.'
+    attr	WHITE
+    legend	"snow covered ground"
+    ispassable	true
+    istransparent true
+}
+
+TILE PATH
+{
+    symbol	'.'
+    attr	BROWN
+    legend	"path"
+    ispassable		true
+    istransparent	true
+}
+
+TILE GRASS
+{
+    symbol	'.'
+    attr	GREEN
+    legend	"grass"
+    ispassable		true
+    istransparent	true
+
+    delusion	SNOWYPATH
+}
+
+TILE MEDITATIONSPOT
+{
+    symbol	'^'
+    attr	GREEN_ISLE
+    legend	"sacred isle"
+    ispassable		true
+    istransparent	true
+
+    delusion	SNOWYPATH
+}
+
+TILE FIELD
+{
+    symbol	'"'
+    attr	BROWN
+    legend	"field"
+    ispassable		true
+    istransparent	true
+
+    delusion	SNOWYPATH
+}
+
+TILE FROZENFIELD
+{
+    symbol	'"'
+    attr	LIGHTBLACK
+    legend	"frost-killed field"
+    ispassable		true
+    istransparent	true
+
+    delusion	SNOWYPATH
+}
+
+TILE FORGE
+{
+    symbol	'&'
+    attr	FIRE
+    legend	"forge"
+    ispassable	false
+    istransparent true
+    describe	true
+
+    delusion	ALTAR
+}
+
+TILE FIRE
+{
+    symbol	'&'
+    attr	FIRE
+    legend	"cooking fire"
+    ispassable	false
+    istransparent true
+    describe	true
+}
+
+TILE WALL
+{
+    symbol	'#'
+    attr	NORMAL
+    legend	"wall"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		true
+    roomcolor		true
+
+    delusion		WOODWALL
+}
+
+TILE WOODWALL
+{
+    symbol	'#'
+    attr	BROWN
+    legend	"wooden wall"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		true
+    roomcolor		true
+}
+
+TILE SOLIDWALL
+{
+    symbol	'#'
+    attr	BROWN
+    legend	"wall"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		false
+}
+
+TILE PORTAL
+{
+    symbol	'*'
+    attr	PURPLE
+    legend	"portal"
+
+    ispassable		true
+    istransparent	true
+    isdiggable		false
+}
+
+TILE ORANGEPORTAL
+{
+    symbol	'*'
+    attr	ORANGEPORTAL
+    legend	"orange portal"
+
+    ispassable		true
+    istransparent	true
+    isdiggable		false
+}
+
+TILE BLUEPORTAL
+{
+    symbol	'*'
+    attr	BLUEPORTAL
+    legend	"blue portal"
+
+    ispassable		true
+    istransparent	true
+    isdiggable		false
+}
+
+TILE MOUNTAINPROTOPORTAL
+{
+    symbol	'^'
+    attr	NORMAL
+    legend	"mountain"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		false
+}
+
+TILE PROTOPORTAL
+{
+    symbol	'#'
+    attr	NORMAL
+    legend	"wall"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		false
+    roomcolor		true
+}
+
+TILE USERPROTOPORTAL
+{
+    symbol	'^'
+    attr	NORMAL
+    legend	"mountain"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		false
+}
+
+TILE BROKENWALL
+{
+    symbol	'%'
+    attr	NORMAL
+    legend	"broken wall"
+
+    ispassable		false
+    istransparent	false
+    isdiggable		true
+    roomcolor		true
+}
+
+TILE DOOR
+{
+    symbol	'+'
+    attr	BROWN
+    legend	"door"
+
+    ispassable		true
+    istransparent	false
+    describe	true
+}
+
+TILE SECRETDOOR
+{
+    symbol	'#'
+    attr	WHITE
+    legend	"wall"
+
+    ispassable		false
+    istransparent	false
+}
+
+TILE MOUNTAIN
+{
+    symbol	'^'
+    attr	NORMAL
+    legend	"mountain"
+    ispassable		false
+    istransparent	false
+
+    delusion 	ICEMOUNTAIN
+}
+
+TILE ICEMOUNTAIN
+{
+    symbol	'^'
+    attr	WHITE
+    legend	"icy mountain"
+    ispassable		false
+    istransparent	false
+}
+
+TILE SNOWYPASS
+{
+    symbol	'W'
+    attr	WHITE
+    legend	"snowy pass"
+    ispassable		false
+    istransparent	false
+}
+
+TILE BRIDGE
+{
+    symbol	'='
+    attr	BROWN
+    legend	"bridge"
+
+    ispassable		true
+    istransparent	true
+    describe	true
+
+    delusion	ICE
+}
+
+TILE WATER
+{
+    symbol	'~'
+    attr	BLUE
+    legend	"water"
+    ispassable		false
+    istransparent	true
+
+    delusion	ICE
+}
+
+TILE ICE
+{
+    symbol	'~'
+    attr	CYAN
+    legend	"ice"
+    ispassable		true
+    istransparent	true
+    forbidrandomwander	true
+}
+
+TILE FOREST
+{
+    symbol	'&'
+    attr	DKGREEN
+    legend	"forest"
+
+    ispassable		true
+    istransparent	false
+    semitransparent	true
+
+    delusion		BAREFOREST
+}
+
+TILE BAREFOREST
+{
+    symbol	'&'
+    attr	LIGHTBLACK
+    legend	"leafless trees"
+
+    ispassable		true
+    istransparent	true
+}
+
+DEFINE AI
+{
+}
+
+AI NONE
+{
+}
+
+AI STAYHOME
+{
+}
+
+AI HOME
+{
+}
+
+AI CHARGE
+{
+}
+
+AI RAT
+{
+}
+
+AI STRAIGHTLINE
+{
+}
+
+AI PATHTO
+{
+}
+
+AI ORTHO
+{
+}
+
+AI FLANK
+{
+}
+
+AI RANGECOWARD
+{
+}
+
+AI COWARD
+{
+}
+
+AI MOUSE
+{
+}
+
+AI SMARTKOBOLD
+{
+}
+
+
+DEFINE MOB
+{
+    U8		symbol		'@'
+    ENM		attr		ATTR		NORMAL
+
+    BOOL	delusion	false
+    U8		delude_symbol	'!'
+    ENM		delude_attr	ATTR		NORMAL
+
+    CST		name		"generic mob"
+    BOOL	isfriendly	false
+
+    CST		melee_name	"claw"
+    CST		melee_verb	"thwack"
+    DICE	melee_damage	1
+    U8		melee_chance	75
+    ENM		melee_item	ITEM	NONE
+    ENM		melee_element	ELEMENT PHYSICAL
+
+    CST		range_name	"none"
+    CST		range_verb	"pierce"
+    BOOL	range_valid	false
+    DICE	range_damage	0
+    U8		range_range	0
+    U8		range_symbol	'*'
+    U8		range_chance	100
+    ENM		range_attr	ATTR	NORMAL
+    ENM		range_element	ELEMENT	PHYSICAL
+
+    U8		max_hp		1
+    U8		max_mp		0
+
+    U8		depth		0
+    U8		rarity		100
+
+    ENM		ai		AI		NONE
+
+    BOOL	isslow		false
+    BOOL	isfast		false
+    BOOL	isvampire	false
+    BOOL	hidefromlos	false
+    BOOL	isregenerate	false
+    BOOL	passwall	false
+    BOOL	candig		false
+    BOOL	swallows	false
+    BOOL	breeder		false
+    BOOL	isthief		false
+    BOOL	canleap		false
+    U8		sightrange	100
+}
+
+MOB NONE
+{
+    symbol	'!'
+    attr	WHITE
+    name	"program error"
+
+    rarity	0
+}
+
+MOB AVATAR
+{
+    symbol	'@'
+    attr	WHITE
+    isfriendly	true
+
+    ai		NONE
+
+    melee_name	"bare hands"
+    melee_verb	"punch"
+    melee_damage 1
+
+    range_name	"none"
+    range_verb	"hit"
+    range_valid	false
+    range_damage 0
+    range_range	 0
+    
+    max_hp	50
+    max_mp	50
+
+    name	"You"
+}
+
+MOB FLETCHER
+{
+    symbol	'@'
+    attr	LIGHTBROWN
+    isfriendly	true
+
+    delusion		true
+    delude_symbol	'o'
+    delude_attr		GREEN
+
+    melee_name		"knife"
+    melee_verb		"stab"
+    melee_damage	1d3
+    melee_chance	50
+
+    ai		HOME
+
+    max_hp	25
+
+    name	"fletcher"
+}
+
+MOB ELDER
+{
+    symbol	'@'
+    attr	DKGREEN
+    isfriendly	true
+
+    delusion		true
+    delude_symbol	'o'
+    delude_attr		GREEN
+
+    melee_name		"staff"
+    melee_verb		"crush"
+    melee_damage	1d4
+    melee_chance	50
+
+    ai		HOME
+
+    max_hp	25
+
+    name	"elder"
+}
+
+MOB HEALER
+{
+    symbol	'@'
+    attr	PINK
+    isfriendly	true
+
+    delusion		true
+    delude_symbol	'o'
+    delude_attr		GREEN
+
+    melee_name		"scalpal"
+    melee_verb		"slice"
+    melee_damage	1d6
+    melee_chance	50
+
+    ai		HOME
+
+    max_hp	25
+
+    name	"healer"
+}
+
+MOB SMITH
+{
+    symbol	'@'
+    attr	CYAN
+    isfriendly	true
+
+    melee_name		"hammer"
+    melee_verb		"club"
+    melee_damage	1d5
+    melee_chance	50
+
+    delusion		true
+    delude_symbol	'o'
+    delude_attr		GREEN
+
+    ai		HOME
+
+    max_hp	25
+
+    name	"smith"
+}
+
+MOB FARMER
+{
+    symbol	'@'
+    attr	NORMAL
+    isfriendly	true
+
+    delusion		true
+    delude_symbol	'o'
+    delude_attr		GREEN
+
+    melee_name		"fists"
+    melee_verb		"claw"
+    melee_damage	1d3
+    melee_chance	50
+
+    ai		HOME
+
+    max_hp	25
+
+    name	"farmer"
+}
+
+MOB RAT
+{
+    symbol	'r'
+    attr	BROWN
+
+    ai		RAT
+
+    melee_verb	"bite"
+    melee_name	"teeth"
+    melee_damage	1d4
+    melee_chance	50
+    max_hp	2
+    depth	1
+
+    name 	"rat"
+}
+
+MOB BAT
+{
+    symbol	'B'
+    attr	LIGHTBROWN
+
+    ai		FLANK
+
+    melee_verb	"bite"
+    melee_damage 1d2
+    melee_name	"teeth"
+
+    max_hp	2
+
+    depth	1
+
+    isfast	true
+
+    name	"bat"
+}
+
+
+MOB KOBOLD
+{
+    symbol	'k'
+    attr	PURPLE
+
+    ai		RANGECOWARD
+
+    melee_verb	"punch"
+    melee_name	"fists"
+    melee_damage	1
+    melee_chance	100
+
+    range_name	"bow"
+    range_verb	"shoot"
+    range_valid	 true
+    range_chance 100
+    range_damage 1d3
+    range_range	 5
+    range_symbol	'/'
+    range_attr	BROWN
+
+    max_hp	5
+    depth	2
+
+    name 	"kobold"
+}
+
+MOB SLIME
+{
+    symbol	'j'
+    attr	GREEN
+
+    name	"slime"
+
+    ai		CHARGE
+
+    melee_verb	"dissolve"
+    melee_name	"corrosive spit"
+    melee_damage 1d3+2
+    melee_element	ACID
+
+    max_hp	10
+    breeder	true
+    depth	3
+}
+
+MOB SPIDER
+{
+    symbol	's'
+    attr	NORMAL
+
+    name	"spider"
+
+    ai		CHARGE
+
+    melee_verb	"bite"
+    melee_name	"fangs"
+    melee_damage	1
+    melee_item	POISON
+    melee_element	POISON
+
+    max_hp	5
+
+    depth	3
+    rarity	50
+}
+
+MOB ICEBEAST
+{
+    symbol	'I'
+    attr	CYAN
+
+    name	"icebeast"
+
+    ai		CHARGE
+
+    melee_verb	"crush"
+    melee_name	"arms"
+    melee_damage 1d4+6
+    melee_item	SLOW
+    melee_element	COLD
+
+    max_hp	20
+    depth 	4
+}
+
+MOB LICH
+{
+    symbol	'L'
+    attr	PURPLE
+
+    name	"lich"
+
+    ai		RANGECOWARD
+
+    melee_verb	"stab"
+    melee_name	"dagger"
+    melee_damage 1d3
+
+    range_name	"cast death bolt"
+    range_verb	"drain"
+    range_damage 1d3+2
+    range_valid	true
+    range_range	 5
+    range_symbol '*'
+    range_attr	GREEN
+
+    max_hp	20
+    depth 	4
+}
+
+MOB DRAGON
+{
+    symbol	'D'
+    attr	WHITE
+
+    name	"dragon"
+
+    ai		CHARGE
+
+    melee_verb	"slash"
+    melee_name	"claws"
+    melee_damage 1d4+8
+
+    range_name	"icebreath"
+    range_verb	"freeze"
+    range_damage 1d4+3
+    range_valid	true
+    range_range	 5
+    range_symbol '*'
+    range_attr	WHITE
+    range_element	COLD
+
+    max_hp	40
+    depth	5
+}
+
+MOB YETI
+{
+    symbol	'Y'
+    attr	WHITE
+
+    name	"yeti"
+
+    ai		CHARGE
+
+    melee_verb	"bite"
+    melee_name	"teeth"
+    melee_damage 1d4+10
+
+    max_hp	40
+    depth	5
+}
+
+
+DEFINE ITEM
+{
+    CST		name		"Si"
+    S16		timer		-1
+    S16		rarity		100
+    S16		depth		0
+
+    BOOL	isflag		false
+
+    U8		symbol		'&'
+    ENM		attr	ATTR	CYAN
+    
+    BOOL	exclusive	false
+
+    BOOL	isfood		false
+    BOOL	ispotion	false
+    BOOL	isring		false
+
+    CST		gaintxt		0
+    CST		losetxt		0
+    BOOL	needtarget	false
+    BOOL	unstackable	false    
+    U8		startstack	1
+
+    U8		melee_power	0
+    U8		melee_consistency	0
+    U8		melee_accuracy	0
+    CST		melee_verb	"hit"
+
+    U8		range_range	0
+    U8		range_power	0
+    U8		range_consistency	0
+    U8		range_area	1
+    CST		range_verb	"shoot"
+    U8		range_symbol	'*'
+    ENM		range_attr	ATTR	NORMAL
+    ENM		ammo		ITEM	NONE
+
+    S16		ac		0
+
+    BOOL	startsbroken	false
+    BOOL	discardextra	false
+    S16		repaircost	0
+}
+
+ITEM NONE
+{
+    name	"Programming Error"
+    symbol	'!'
+    attr	WHITE
+    rarity	0
+}
+
+ITEM CORPSE
+{
+    name	"corpse"
+    symbol	'%'
+    attr	DKRED
+    rarity	0
+}
+
+ITEM GOLD
+{
+    symbol	'$'
+    attr	GOLD
+    rarity	0
+    name	"gold coin"
+}
+
+ITEM ARROW
+{
+    symbol	'/'
+    attr	BROWN
+
+    name	"arrow"
+    rarity	0
+    startstack	12
+}
+
+ITEM QUICKBOOST
+{
+    symbol	'!'
+    attr	GREEN
+
+    isflag	true
+
+    name	"Hasted"
+    timer	50
+    rarity	0
+    gaintxt	"%S <speed> up!"
+    losetxt	"%S <slow> down."
+}
+
+ITEM BLIND
+{
+    name	"Blinded"
+    timer	10
+    rarity	0
+    isflag	true
+    exclusive	true
+    gaintxt	"%S <be> blinded!"
+    losetxt	"%S can see!"
+}
+
+ITEM ENRAGED
+{
+    name	"Enraged"
+    rarity	0
+    isflag	true
+    exclusive	true
+    gaintxt	"%S <be> enraged!"
+    losetxt	"%S <calm> down."
+}
+
+ITEM POISON
+{
+    name	"Poisoned"
+    timer	10
+    rarity	0
+    isflag	true
+    gaintxt	"%S <be> poisoned!"
+    losetxt	"%S <be> cured."
+}
+
+ITEM PLAGUE
+{
+    name	"Sick"
+    rarity	0
+    isflag	true
+    exclusive	true
+    gaintxt	"%S <fall> sick."
+    losetxt	"%S <get> well."
+}
+
+ITEM SLOW
+{
+    name	"Slow"
+    timer	4
+    rarity	0
+    isflag	true
+    exclusive	true
+    gaintxt	"%r muscles slow."
+    losetxt	"%S <regain> normal movement."
+}
+
+ITEM SAUSAGES
+{
+    symbol	'%'
+    attr	RED
+
+    name	"sausages"
+    isfood	true
+}
+
+ITEM BREAD
+{
+    symbol	'%'
+    attr	BROWN
+
+    name	"bread"
+    isfood	true
+}
+
+ITEM MUSHROOMS
+{
+    symbol	'%'
+    attr	GREY
+
+    name	"mushrooms"
+    isfood	true
+}
+
+ITEM APPLE
+{
+    symbol	'%'
+    attr	RED
+
+    name	"apple"
+    isfood	true
+}
+
+ITEM PICKLE
+{
+    symbol	'%'
+    attr	DKGREEN
+
+    name	"pickle"
+    isfood	true
+}
+
+ITEM INVULNERABLE
+{
+    name	"Invulnerability"
+    timer	50
+    isflag	true
+    rarity	0
+    gaintxt	"%S <become> invulnerable."
+    losetxt	"%S <feel> vulnerable."
+}
+
+ITEM RING_ONYX
+{
+    symbol	'='
+    attr	LIGHTBLACK
+    isring	true
+
+    name	"onyx ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_CITRINE
+{
+    symbol	'='
+    attr	ORANGE
+    isring	true
+
+    name	"citrine ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_DIAMOND
+{
+    symbol	'='
+    attr	WHITE
+    isring	true
+
+    name	"diamond ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_SAPHIRE
+{
+    symbol	'='
+    attr	LIGHTBLUE
+    isring	true
+
+    name	"saphire ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_AQUAMARINE
+{
+    symbol	'='
+    attr	CYAN
+    isring	true
+
+    name	"aquamarine ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_MALACHITE
+{
+    symbol	'='
+    attr	DKGREEN
+    isring	true
+
+    name	"malachite ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_GOLD
+{
+    symbol	'='
+    attr	YELLOW
+    isring	true
+
+    name	"gold ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_EMERALD
+{
+    symbol	'='
+    attr	GREEN
+    isring	true
+
+    name	"emerald ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM RING_RUBY
+{
+    symbol	'='
+    attr	RED
+    isring	true
+
+    name	"ruby ring"
+    rarity	10
+
+    discardextra	true
+}
+
+ITEM YELLOW_POTION
+{
+    symbol	'!'
+    attr	YELLOW
+    ispotion	true
+
+    name	"yellow potion"
+    rarity	10
+}
+
+ITEM BLUE_POTION
+{
+    symbol	'!'
+    attr	BLUE
+    ispotion	true
+
+    name	"blue potion"
+    rarity	10
+}
+
+ITEM RED_POTION
+{
+    symbol	'!'
+    attr	RED
+    ispotion	true
+
+    name	"red potion"
+    rarity	10
+}
+
+ITEM WHITE_POTION
+{
+    symbol	'!'
+    attr	WHITE
+    ispotion	true
+
+    name	"white potion"
+    rarity	10
+}
+
+ITEM GREEN_POTION
+{
+    symbol	'!'
+    attr	GREEN
+    ispotion	true
+
+    name	"green potion"
+    rarity	10
+}
+
+ITEM TEAL_POTION
+{
+    symbol	'!'
+    attr	TEAL
+    ispotion	true
+
+    name	"teal potion"
+    rarity	10
+}
+
+
+ITEM CRUDEBOW
+{
+    symbol	'('
+    attr	BROWN
+
+    name	"crude bow"
+
+    rarity	100
+    depth	1
+
+    range_range	5
+    range_power	2
+    range_consistency	1
+    range_verb	"shoot"
+    range_symbol	'/'
+    range_attr	BROWN
+
+    ammo	ARROW
+
+    startsbroken	true
+    discardextra	true
+    repaircost		10
+}
+
+ITEM SHORTBOW
+{
+    symbol	'('
+    attr	LIGHTBROWN
+
+    name	"short bow"
+
+    rarity	100
+    depth	3
+
+    range_range	5
+    range_power	3
+    range_consistency	3
+    range_verb	"shoot"
+    range_symbol	'/'
+    range_attr	BROWN
+
+    ammo	ARROW
+
+    startsbroken	true
+    discardextra	true
+    repaircost		20
+}
+
+ITEM LONGBOW
+{
+    symbol	'('
+    attr	LIGHTBROWN
+
+    name	"long bow"
+
+    rarity	100
+    depth	4
+
+    range_range	6
+    range_power	4
+    range_consistency	8
+    range_verb	"shoot"
+    range_symbol	'/'
+    range_attr	BROWN
+
+    ammo	ARROW
+
+    startsbroken	true
+    discardextra	true
+    repaircost		40
+}
+
+ITEM YEWLONGBOW
+{
+    symbol	'('
+    attr	YELLOW
+
+    name	"yew long bow"
+
+    rarity	100
+    depth	5
+
+    range_range	7
+    range_power	6
+    range_consistency	12
+    range_verb	"shoot"
+    range_symbol	'/'
+    range_attr	BROWN
+
+    ammo	ARROW
+
+    startsbroken	true
+    discardextra	true
+    repaircost		100
+}
+
+ITEM KNIFE
+{
+    symbol	'('
+    attr	GREY
+
+    name	"kitchen knife"
+    rarity	0
+
+    melee_power		1
+    melee_accuracy	50
+    melee_consistency	1
+
+    discardextra	true
+}
+
+ITEM KOBOLDDAGGER
+{
+    symbol	'('
+    attr	GREY
+
+    name	"crude stone dagger"
+
+    melee_power		1
+    melee_accuracy	100
+    melee_consistency	2
+
+    depth		1
+    discardextra	true
+
+    rarity	100
+}
+
+ITEM BRONZESWORD
+{
+    symbol	'('
+    attr	ORANGE
+
+    name	"bronze short sword"
+
+    melee_power		3
+    melee_accuracy	100
+    melee_consistency	3
+
+    depth		2
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		20
+}
+
+ITEM IRONSHODSTAFF
+{
+    symbol	'('
+    attr	BROWN
+
+    name	"iron-shod staff"
+
+    melee_power		4
+    melee_accuracy	100
+    melee_consistency	5
+
+    depth		3
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		35
+}
+
+ITEM IRONSWORD
+{
+    symbol	'('
+    attr	DKCYAN
+
+    name	"short sword"
+
+    melee_power		5
+    melee_accuracy	100
+    melee_consistency	7
+
+    depth		3
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		50
+}
+
+ITEM MACE
+{
+    symbol	'('
+    attr	LIGHTBLUE
+
+    name	"mace"
+
+    melee_power		8
+    melee_accuracy	100
+    melee_consistency	10
+
+    depth		4
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		75
+}
+
+ITEM STEELSWORD
+{
+    symbol	'('
+    attr	CYAN
+
+    name	"long sword"
+
+    melee_power		9
+    melee_accuracy	100
+    melee_consistency	15
+
+    depth		4
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		100
+}
+
+ITEM WARHAMMER
+{
+    symbol	'('
+    attr	LIGHTBLACK
+
+    name	"warhammer"
+
+    melee_power		12
+    melee_accuracy	100
+    melee_consistency	18
+
+    depth		5
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		150
+}
+
+ITEM CRYSTALSWORD
+{
+    symbol	'('
+    attr	WHITE
+
+    name	"crystal sword"
+
+    melee_power		13
+    melee_accuracy	100
+    melee_consistency	23
+
+    depth		5
+
+    rarity		100
+    startsbroken	true
+    discardextra	true
+    repaircost		200
+}
+
+ITEM CLOTHES
+{
+    symbol	'['
+    attr	WHITE
+
+    name	"clothes"
+
+    rarity	0
+    ac		1
+    discardextra	true
+}
+
+ITEM ARMOUR_LEATHER
+{
+    symbol	'['
+    attr	BROWN
+
+    name	"leather armour"
+
+    depth	1
+
+    rarity	100
+    ac		25
+    startsbroken	true
+    discardextra	true
+    repaircost	10
+}
+
+ITEM ARMOUR_STUDDEDLEATHER
+{
+    symbol	'['
+    attr	LIGHTBROWN
+
+    name	"studded leather armour"
+
+    depth	2
+    rarity	100
+    ac		50
+    startsbroken	true
+    discardextra	true
+    repaircost	20
+}
+
+ITEM ARMOUR_RINGMAIL
+{
+    symbol	'['
+    attr	LIGHTBLACK
+
+    name	"ring mail"
+
+    depth	3
+    rarity	100
+    ac		75
+    startsbroken	true
+    discardextra	true
+    repaircost	35
+}
+
+ITEM ARMOUR_CHAIN
+{
+    symbol	'['
+    attr	NORMAL
+
+    name	"chain mail"
+
+    depth	3
+    rarity	100
+    ac		100
+    startsbroken	true
+    discardextra	true
+    repaircost	50
+}
+
+ITEM ARMOUR_BREASTPLATE
+{
+    symbol	'['
+    attr	WHITE
+
+    name	"breast plate"
+
+    depth	4
+    rarity	100
+    ac		150
+    startsbroken	true
+    discardextra	true
+    repaircost	75
+}
+
+ITEM ARMOUR_PLATE
+{
+    symbol	'['
+    attr	CYAN
+
+    name	"platemail"
+
+    depth	4
+    rarity	100
+    ac		200
+    startsbroken	true
+    discardextra	true
+    repaircost	100
+}
+
+ITEM ARMOUR_FULLPLATE
+{
+    symbol	'['
+    attr	DKCYAN
+
+    name	"full platemail"
+
+    depth	5
+    rarity	100
+    ac		300
+    startsbroken	true
+    discardextra	true
+    repaircost	200
+}
+
+ITEM BOOK_INTRO
+{
+    name	"book of secrets"
+    rarity 0
+
+    symbol	'+'
+    attr	TEAL
+}
+
+ITEM BOOK_PORTAL
+{
+    name	"book of transmigration"
+    rarity	0
+    symbol	'+'
+    attr	BLUEPORTAL
+}
+
+ITEM BOOK_FIREBALL
+{
+    name	"book of conflagration"
+    rarity	0
+    symbol	'+'
+    attr	RED
+}
+
+ITEM BOOK_HEAL
+{
+    name	"book of rectification"
+    rarity	0
+    symbol	'+'
+    attr	WHITE
+}
+
+ITEM BOOK_FIRESTORM
+{
+    name	"book of incineration"
+    rarity	0
+    symbol	'+'
+    attr	FIRE
+}
+
+ITEM BOOK_PENULTIMATE
+{
+    name	"book of silence"
+    rarity 0
+    symbol	'+'
+    attr	LIGHTBLACK
+}
+
+DEFINE SPELL
+{
+    CST		name		"none"
+    u8		mana		0
+    ENM		item		ITEM		NONE
+    bool	needsdir	false
+}
+
+SPELL NONE
+{
+}
+
+SPELL PORTAL
+{
+    name		"Portal"
+    mana		4
+    item		BOOK_PORTAL
+    needsdir		true
+}
+
+SPELL FIREBALL
+{
+    name		"Fireball"
+    mana		4
+    item		BOOK_FIREBALL
+    needsdir		true
+}
+
+SPELL HEAL
+{
+    name		"Heal"
+    mana		1
+    item		BOOK_HEAL
+}
+
+SPELL FIRESTORM
+{
+    name		"Firestorm"
+    mana		10
+    item		BOOK_FIRESTORM
+    needsdir		true
+}
+
+DEFINE RING
+{
+    CST		name		"none"
+
+    ENM		resist		ELEMENT		NONE
+    S16		resist_amt	0
+
+    S16		deflect		0
+}
+
+RING NONE
+{
+    name	"plain ring"
+}
+
+RING RESISTCOLD
+{
+    name	"ring of cold resistance"
+    resist	COLD
+    resist_amt	50
+}
+
+RING VULNCOLD
+{
+    name	"ring of cold vulnerability"
+    resist	COLD
+    resist_amt	-25
+}
+
+RING RESISTACID
+{
+    name	"ring of acid resistance"
+    resist	ACID
+    resist_amt	50
+}
+
+RING VULNACID
+{
+    name	"ring of acid vulnerability"
+    resist	ACID
+    resist_amt	-25
+}
+
+RING DEFLECT
+{
+    name	"ring of deflection"
+    deflect	50
+}
+
+RING MAGNET
+{
+    name	"magnetic ring"
+    deflect	-25
+}
+
+RING SEARCH
+{
+    name	"ring of searching"
+}
+
+RING RESISTPOISON
+{
+    name	"ring of poison resistance"
+    resist	POISON
+    resist_amt	50
+}
+
+RING VULNPOISON
+{
+    name	"ring of poison vulnerability"
+    resist	POISON
+    resist_amt	-25
+}
+
+DEFINE POTION
+{
+    CST		name		"none"
+}
+
+POTION NONE
+{
+    name		"water"
+}
+
+POTION HEAL
+{
+    name		"heal potion"
+}
+
+POTION CURE
+{
+    name		"cure potion"
+}
+
+POTION POISON
+{
+    name		"poison potion"
+}
+
+POTION JUICE
+{
+    name		"fruit juice"
+}
+
+POTION ACID
+{
+    name		"acid potion"
+}
+
+POTION SPEED
+{
+    name		"speed potion"
+}
+
+DEFINE QUEST
+{
+}
+
+QUEST ICYPASS
+QUEST COLD
+QUEST SICKNESS

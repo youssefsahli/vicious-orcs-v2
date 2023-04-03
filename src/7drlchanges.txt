@@ -1,0 +1,10 @@
+Here are the changes since the 7DRL release.
+
+v001:
+- Fix memory leak.
+- Kobolds now shoot you rather than fire you.
+- Inventory menu better remembers your last choice if you use the
+  submenus.
+- The Depth status line now updates.
+
+7DRL Release

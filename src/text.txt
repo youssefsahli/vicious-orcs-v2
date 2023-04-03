@@ -1,0 +1,769 @@
+# This is the database of text commands.
+
+# Welcome commands are sent when you first play
+# as the given character.
+
+welcome::You1
+    An earthquake has revealed a mysterious cave in the mountains
+    surrounding your village.  Legend has it that within lives a tribe
+    of vicious orcs!  Your task: preemptively protect the village.
+    And maybe make a few coins on the side.
+
+    Good luck!
+    
+    Hit '?' for a list of keyboard commands.
+
+welcome::Back
+    You resume your adventure.
+
+    Good luck!
+
+    Hit '?' for a list of keyboard commands.
+
+chat::You::Farmer
+    The winter looks to end soon!
+
+yell::You::Farmer
+    Hail!
+
+fire::You
+    Hey!  That is you on the other side of that portal!
+
+# Game commands are the general overall commands.
+game::help
+    An earthquake has revealed a mysterious cave in the mountains
+    surrounding your village.  Legend has it that within lives a tribe
+    of vicious orcs!  Your task: preemptively protect the village.
+    And maybe make a few coins on the side.
+
+    You can move with the number pad, arrow keys, or with vi-style keys.  
+    Walking into creatures will attack them.
+
+       8-way Movement Keys
+
+         7 8 9     y k u
+          \|/       \|/
+         4-5-6     h-.-l
+          /|\       /|\
+         1 2 3     b j n
+
+     Command Keys:
+       f,0 - Fire Weapon
+       m - Meditate
+       z,+ - Cast a Spell
+       s - Search
+       x - Look Around
+         - Wait
+       i - Inventory
+       e,/ - Rotate Map Left
+       r,* - Rotate Map Right
+       Q - Quit and Save
+       R - Restart
+       W - Welcome Message
+       a - About Vicious Orcs
+       P - Toggle Fullscreen
+       O - Options
+       ? - This Help
+
+game::lose
+    With your death the village would seem to have lost its last hope.
+    Vicious orcs will no doubt soon raze and ruin your ancestral home.
+
+game::victory
+    Filled with shame and regret, you wander around the village subsisting 
+    on stored food.  Eventually, the passes do clear.  And outsiders
+    come to the village.  You had noble plans of turning yourself in;
+    but change your mind when you see the shock and horror on the faces
+    of the first newcomers.
+
+    Nonetheless, by the following winter, you have been hunted down
+    and killed.
+
+game::cleanvictory
+    What a quixotic quest the opening of the cave has led you on!
+
+    Right down to the deepest parts of the earth, only to return
+    back to your home!
+
+    While no orcs were found, the adventure did prove quite profitable,
+    both for you and your fellow villagers.  When the passes open in
+    the spring the first merchants are surprised at the spendthrift
+    habits of this formerly penny pinching village.
+
+game::killorc
+    As the last of the vicious orcs falls to the earth, a sharp pain
+    lances through your head.
+
+    Your vision goes white.
+
+    The world fades back in - first in monochrome, and then with added colour.
+    As you begin to make sense of what is before you, a feeling of unease
+    transforms inexorably to horror.
+
+    You may now declare your [v]ictory over the vicious orcs.
+
+game::about
+    Vicious Orcs is a Seven Day Roguelike written by Jeff Lait.
+
+    It's home on the web can be found at:
+    http://www.zincland.com/7drl/orcs
+
+    It uses The Chronicles of Doryen libraries to display to the
+    screen, whose home can be found at: 
+    http://doryen.eptalys.net/
+
+    It uses Simple DirectMedia Layer libraries to display to the
+    screen, whose home can be found at: http://www.libsdl.org/
+
+    It uses the Mersenne Twister for random number generation:
+    http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html
+
+    Questions and comments can be posted to rec.games.roguelike.misc
+    on USENET, or directly to the author at jmlait at zincland dot com.
+
+    Have fun!
+
+mob::fletcher
+    While the village fletcher has a house on the outskirts, she
+    spends most of her time in the woods hunting game and fashioning arrows.
+    Her skill in both bow construction and archery are well established
+    and she usually sells some of her winter craftings to the first merchants.
+
+mob::smith
+    The village smith is always described as a hardworking man of virtue when
+    outsiders come to purchase the village's wares.  But locals know him as one
+    who spends most of the winter drinking rather than fashioning a backlog of
+    goods to sell with the first merchants.  Each year, when the passes
+    clear, the smith is forced into a frenzy of activity to have something to
+    show for the winter of indolence.
+
+mob::elder
+    Elder is more of a job title than a description - the village elder is
+    actually not that old in absolute terms.  Mind you, from your vantage
+    point of youth, she is positively ancient.  Nonetheless, her sound
+    judgment and levelheadedness has won the respect of the village.
+
+mob::healer
+    The village healer is actually an outsider.  He was a high paid surgeon in
+    the capital when, during a routine trade mission, he was trapped in the
+    village over a winter.  The following spring he closed his practice in the
+    capital and moved here.  He claims it is due to the calming isolation.  The
+    gossips of the village are convinced a love affair is involved,
+    but to everyone's dismay, no one has yet determined the identity
+    of the lover.
+
+mob::farmer
+    The backbone of these remote mountain villages: the hard working farmers
+    that toil in the fields to provide the grain.  Their output not only feeds
+    the village, but provides the primary export for trade.  While this fertile
+    valley is isolated for most of the year by the snow covered passes, in the
+    summer the cold lingers only in the mountaintops, allowing for a
+    surprisingly long growing season.
+
+mob::You
+    When the earthquake revealed the mysterious cave into the
+    mountains, it was only you who was willing to step up to the
+    challenge from the time of legends.  The other villagers either
+    believed the legends untrue, or felt it best to fight the orcs
+    when they come out, rather than seeking them in their lair.
+
+    It is thus a lonely quest - indeed, in a moment of noble self
+    reflection, you realize that if you are successful, no one will
+    even have proof that there was a danger!  Perhaps you should bring
+    back some scalps?
+
+mob::bat
+    The erratic flight pattern of bats has often caused them to be
+    associated with madness.  However, one may be surprised to know
+    that there is a purpose behind it.
+
+    In this case, the purpose seems to be to feast on your flesh.
+    
+mob::rat
+    Cowardly rats flee at the first sign of trouble.  Beware of
+    cornering them, however, for a cornered rat does not mind fighting
+    unfair.
+
+mob::kobold
+    Kobolds are small purple furred dog-like creatures.  While an
+    individual kobold poses little threat, their use of ranged weapons
+    can wear down an adventurer.
+
+mob::slime
+    A greenish puddle of slime.  To your shock, it moves!
+
+    Organic matter that chances to contact it as it slithers forward
+    sizzles, suggesting the slime is highly acidic in nature.  Just
+    when you conclude that you'll destroy it from afar with ranged
+    weapons, it stretches out... and divides into two!
+
+    Now there are two slimes to kill.
+
+mob::spider
+    This creature is certainly quite big for a spider.  But its half meter
+    girth fails to inspire you with much fear.  It seems still eminently
+    squashable.
+
+    The fangs, on the other hand, remind you that spiders much, much, smaller
+    can prove lethal.
+
+mob::icebeast
+    Ferocious creatures from the arctic wastes.  Beware the icy grasp!
+    Or find yourself frozen in your tracks.
+
+mob::lich
+    Powerful wizards can make diabolical pacts with the devil to
+    return after death as a lich.  NEVER confuse these with lichen!
+
+mob::yeti
+    Stories from climbers of the icy peaks that surround your village
+    have given you a healthy respect for these furred humanoids.
+    You are not sure what they are doing so far underground.  Hopefully
+    it is a sign that you have almost reached the other end of the
+    tunnel.
+
+mob::dragon
+    The mythical dragon is well known in literature.  
+    
+    This dragon does not conform to the myths you were told.
+
+    It is shiny white in colour and the ground it stands on is covered
+    with frost, as if it were radiating cold rather than heat.  While
+    this is hopeful sign that it doesn't breathe fire, one should keep
+    in mind that fire isn't the only thing that can be a breath weapon...
+
+mob::orc
+    The filthy green skinned orcs of legend!  These vile beasts are
+    said to have decimated the village generations ago, leaving none
+    alive to tell the tale.  Well, one presumes, someone must have
+    escaped to describe them?  Still, it is a shock to see legend
+    made flesh!  Hopefully your quest in the dungeons has prepared
+    you to deal with them.
+
+item::gold coin
+    The Citran gold mark has been the universal currency of the land
+    for centuries.  When this type of coin was first minted at the
+    height of the Orange Age some merchants refused to accept them.
+    They claimed they were not pure gold but some inferior amalgam.
+    Proof of this was simple - the density of gold is such that no
+    human could carry a thousand gold pieces in their pocket!  And yet
+    this was possible with the Citran gold mark.
+
+    The Citran mint calmly explained that it was not their coin that
+    was debased, but rather natural gold.  They countered the heavy
+    weight of natural gold was proof it was insufficiently pure.
+
+    Pragmatic merchants sided swiftly with the mint and the Citran
+    gold mark has been the unit of exchange ever since.
+
+item::corpse
+    The mangled remains of a former foe.  You have heard stories
+    of dungeon adventurers that grew so hungry they were forced to
+    eat such raw carrion.  You hope you will escape that fate.
+
+item::body
+    The mangled remains of a former friend.  
+
+item::sausages
+    A string of plump red sausages, well aged by their stint in these
+    caves.  
+
+item::bread
+    At first you mistook it for a rock.  Then you saw it was a thick crusted
+    loaf of bread.  Some gourmets would no doubt have preferred the rock.
+
+item::mushrooms
+    A bunch of mushrooms.  Edible?  Maybe.  You never know with
+    mushrooms.  Even if you fed it to a kobold, you'd still
+    have to wait a week or so to see if it proved toxic.  And you'd
+    still not know if it was some natural kobold immunity rather than
+    the safety of the mushroom.
+
+item::apple
+    A nice winter apple.  You wonder how it made its way underground.
+
+item::pickle
+    A cucumber that had been immersed in a brine solution until it
+    pickled.
+
+item::onyx ring
+    The jet black onyx reflects the sterling silver setting of this ring.
+
+item::citrine ring
+    A large orange citrine is set between a circle of amethysts, making for a
+    pleasing contrast in quartz.
+
+item::diamond ring
+    Diamonds, being the hardest material, are quite useful for scratching
+    out blazes on the stone walls of the dungeon.  You hope the setting
+    will prove sturdy enough.
+
+item::saphire ring
+    This pale blue gem reminds you of the summer sky: just before a storm.
+
+item::aquamarine ring
+    While this, almost be definition, is supposed to remind you of the ocean,
+    it doesn't.  Possibly because you have never seen the ocean.
+
+item::malachite ring
+    An irregular, unpolished, lump of malachite is set in this ring.  You
+    wonder what aesthetic prompted the jewler to use this green stone
+    unfinished?
+
+item::gold ring
+    A plain band of gold.  A quick scratch test suggests it may have
+    significant purity.  Not as pure as a Citran gold mark, of course: it is
+    much too heavy, for one!
+
+item::emerald ring
+    A leaf-green emerald is set in thick copper band.  The natural oxidization
+    of the copper has led to a pleasingly sylvan effect.
+
+item::ruby ring
+    This ring's gem glows bloody red in the twilight of the dungeon.
+
+item::ring of cold resistance
+    This magical ring produces a warming aura that lessens all cold based
+    damage.
+
+item::ring of cold vulnerability
+    Some bumbling apprentice inverted the magic weaves of a cold resistance
+    ring, resulting in this abomination.  Rather than dispose of it properly,
+    he just threw it in the trash.  Where, after many an adventure, it ended up
+    on the dungeon floor for you to mistakenly wear.
+
+item::ring of acid resistance
+    This ring provides a powerful neutralizing field that reduces all acidic
+    damage.
+
+item::ring of acid vulnerability
+    When attempting to form troublesome solutions, rings of acid vulnerability
+    are sought after to avoid premature precipitate.  They are not so sought
+    after by adventurers facing slimes, however.
+
+item::ring of deflection
+    Ranged attacks need not be feared by those with a deflection ring.  They
+    will be repulsed by the magic of the ring, leaving much less power for
+    damaging the bearer.
+
+item::magnetic ring
+    Most sporting associations have banned the magnetic ring.  Its ability to
+    help redirect thrown projectiles toward the caster makes it very useful for
+    any endeavour involving catching objects.  Note that arrows, however, are
+    not so simple to catch.
+
+item::ring of searching
+    The useful cantrip embedded in this ring causes it to vibrate whenever the
+    surroundings are not quite what they seem.  This results in a seemingly
+    psychic ability to discover traps and secret doors.
+    
+item::ring of poison resistance
+    The energies of this ring strengthen your constitution allowing you to
+    withstand toxins that would otherwise leave you dead.
+
+item::ring of poison vulnerability
+    After the homeopathic practicing mage has diluted their giant spider venom
+    one to ten million, they will then don this ring to increase the effect.
+
+    Surprisingly few have bothered to point out that the principles of
+    homeopathy suggest that a poison resistance ring might be a better choice.
+
+item::heal potion
+    The succour of many an adventurer!  The powerful draught will
+    instantly bind your wounds and restore your health.
+
+item::cure potion
+    While poison weakens slowly, it weakens inexorably.  A wise adventurer will
+    not wait out the effect, but instead reach for a trusty cure potion for
+    relief.
+
+    Cure potions are in high demand around university campuses for their
+    anti-hangover properties.
+
+item::poison potion
+    No doubt the alchemist that concentrated the vile essences that
+    form this poisonous brew had some practical application in mind.
+    Now if only they had bothered to affix a label to warn would be
+    imbibers!
+
+item::fruit juice
+    A delicious fruit medley vacuum sealed to preserve freshness!
+
+    There's no rotten fruit juice in *this* dungeon!  We have standards, we do!
+
+item::acid potion
+    The fuming liquid in this bottle is likely Aqua Fortis, if not even Aqua
+    Regia itself!  In any case, it is something to be handled with care.
+    
+    Acid potions are in high demand around university campuses, though
+    when asked, few will admit to purchasing them.
+
+item::speed potion
+    This powerful energizing drink is made with caffeine, sugar,
+    methamphetamine, and a bit of nicotine for good measure.  It is a
+    very good idea to stay within the recommended daily dosage!
+
+    During exam sessions speed potions are sold out in the apothecaries
+    around university campuses.
+
+item::red potion
+    A small glass bottle filled to the brim with a bright red liquid.
+    Considering what else you find in the dungeon, it is reassuring
+    that the colour is not at all that of blood.
+
+item::yellow potion
+    An opaque yellow liquid fills this square shaped bottle.  It is
+    well known that yellow potions are heal potions.  So drink up!
+
+item::blue potion
+    This watery potion is tinged blue.  A greenish sediment has
+    precipitated from it.
+
+item::white potion
+    The opaque white liquid in this potion remind you more of lead paint
+    than it does of milk.
+
+item::green potion
+    The viscous green sludge in this potion bottle looks like the sort
+    of thing you'd have to eat rather than drink.
+
+item::teal potion
+    The next time someone asks you what colour "teal" is, you plan
+    on showing them the liquid of this potion bottle.
+
+item::arrow
+    A well-crafted arrow.  Unfortunately, with the hard surfaces of
+    the rock caves, likely only good for one shot.
+
+item::Hasted
+    Your metabolism is running in overtime.  All the other creatures
+    seem to be moving slower than before, giving you more time to
+    move, attack, and escape.
+
+item::Blinded
+    You can't see!  All is black, no matter how widely you open
+    your eyes.  You pray fervently that this condition is temporary.
+
+item::Enraged
+    You see red!  Your blood boils as you contemplate the crime that
+    has occurred!  Vengence be thine!
+
+item::Poisoned
+    Some noxious substance courses through your veins.  With every heartbeat
+    you can feel it spread and weaken you still farther.  Will your
+    constitution prove strong enough to withstand the full course of
+    this toxin?  Perhaps it is best to not find out.
+
+item::Sick
+    You have a bad cough that would keep you awake at nights.  But it isn't
+    night yet, so I guess it is premature to describe it as that.
+
+item::Slow
+    You feel like you are wading through a thick mud.  Even your sword
+    swings seem to move slower than they should.
+
+item::crude bow
+    A simple wooden bow.  Note that a bow isn't much use without arrows.
+
+item::short bow
+    This bow is well constructed.  However, its draw weight is rather low,
+    preventing it from achieving the sort of power that you would prefer.
+
+item::long bow
+    This large bow has a long draw which gives it an excellent range and
+    stopping power.
+
+item::yew long bow
+    Exactly why yew trees make for the best long bows is something you
+    are very unclear of.  But this one has a carefully engraved label
+    attesting to the genuine nature of said tree that went into its
+    construction, so clearly there must be some advantage.
+
+    In any case, a bit of practice shows it is superior to the other long
+    bows you have found, independent of the name of its material.
+
+item::kitchen knife
+    While some may laugh at the prospect of a brave adventurer storming
+    underground lairs armed with something from the kitchen, they
+    haven't seen this knife.  Not only is it well-weighted and of a good
+    length, the edge has been kept razor sharp.
+
+    As an added bonus, you've had a lot of experience with it, if only
+    in peeling potatoes.
+
+item::crude stone dagger
+    A stone dagger.  Calling it crude seems implied by the nature of
+    the material, but you feel the prefix is justified in this case.
+    Nonetheless, it does provide a pleasing upgrade over kitchen cutlery.
+
+item::bronze short sword
+    This pointed short sword is well-crafted and balanced.  Sadly,
+    the crafter decided to use bronze, a soft metal that does not
+    hold as fine an edge as you'd prefer.  Still, it beats stone!
+
+item::iron-shod staff
+    This hard wood staff has been banded by thick iron rings.  These both
+    balance the weight and ensure that powerful impacts do not split the wood.
+    As an added bonus it makes an excellent walking stick.
+
+item::short sword
+    The rust marks on this sword show it to be made of iron.  While this
+    is an improvement on bronze, its edge still needs frequent honing.
+
+item::mace
+    This metal club is made out of some sort of blued steel.  It is heavy and
+    well weighted.
+
+item::long sword
+    This long sword is made of well-tempered steel.  Its edge
+    is true and sharp and promises to mean the doom of many of your foe.
+
+item::warhammer
+    A heavy hammer of black iron.  It matters not how thick the armour is:
+    you will crush them with this!
+
+item::crystal sword
+    This two handed sword is clear as glass.  Beautiful rainbows spray from its
+    prismatic surface when exposed to the sun.  Surprisingly, it is as hard as
+    diamond.  It is fortunate that the hilt is made of base metal, or the
+    village smith would have no chance of repairing it!
+
+item::clothes
+    These are your simple every day work clothes.  While certainly more modest
+    than running about naked, the protection they offer is minimal at best.
+    
+item::leather armour
+    Plates of hardened leather form the shell of this set of armour.  While it
+    is in good condition, it must be resized to fit your frame.
+
+item::studded leather armour
+    The hardened leather that makes up this armour has been further
+    augmented with numerous metal rivets.  While people may debate
+    how much of a contribution this will make to the defensive qualities,
+    it is of your opinion that they vastly improve the aesthetic.
+
+item::ring mail
+    This is a set of leather armour.  Rather than studs, however, large
+    black-iron loops have been stitched onto the armour.  While they provide
+    little protection for a well placed thrust, you may take comfort that they
+    will easily block the wild slashes of genuine battle.
+
+item::chain mail
+    Large links of metal are woven into tunic and leggings.  While the links
+    are small enough to stop most weapons, when first found the number of
+    broken links seemed to almost outnumber the whole links.
+
+item::breast plate
+    A shining piece of gold-chased breast plate. No doubt lost by some noble in
+    a war long ago.  While the rest of the pieces would be appreciated, the
+    safety of a steel shell around your vitals is well appreciated.
+
+item::platemail
+    Breast plate and leggings fashioned with overlapping plates of steel, this
+    armour provides excellent protection against almost all attacks.  Such
+    a precision piece of armour requires sizing for each user, however, so
+    it isn't something you can don as soon as you find it on the dungeon floor.
+
+item::full platemail
+    This set of platemail also includes the helmet, gauntlets, and all the
+    other miscellenous fiddly bits whose names escape you.  This leaves
+    few if any ways for enemy attacks to get through to you.
+
+item::book of secrets
+    This book is bound with brittle leather and covered with brownish-red
+    stains.
+
+    Carefully reading through what text survives:
+
+    ...passage between the realms secured...
+
+    ...peace negotiations betrayed...
+
+    ...should have attacked first...
+
+    ...the books of magic will be hidden in the passage...
+
+    ...[m]editate on the small island to regain mana...
+
+    ...great cost to magic...
+
+    ...if no mana remains, your own blood will power the spell...
+
+item::book of transmigration
+    The edge of this book has been cut off as if by an infinitely sharp blade.
+    Fortunately the text survives.
+
+    It describes how to cast a spell that will link two disjoint points
+    in space with a magic portal, allowing one to quickly travel between
+    them.  Focus your energies into a [z]ap of this spell and direct
+    it onto a suitably flat wall.
+
+item::book of conflagration
+    Between the charred pages of this tome you find instructions for
+    violently releasing your magical powers as an incendiary fireball.
+    The designer of the spell was even considerate enough to ensure the
+    ensuing inferno does not burn yourself, even if you target too close
+    in the heat of battle.
+
+item::book of rectification
+    This precisely bound grimoire details how to use your magical
+    energies to mend your own body.  Obviously, when casting this spell,
+    you can't use your own blood energy!
+
+item::book of incineration
+    This pristine book smells of charcoal and sulphur.
+
+    Opening it, you discover the dread magic of incineration.  The
+    explosion of flame generated by this incantation will make the
+    potent fireball look like a birthday candle.
+
+    Now all you need is a suitable target!
+
+item::book of silence
+    This is what appears to be an ancient journal.  Most of the pages are
+    ripped, charred, or blurred by blood.  What you can read is this:
+
+    ...the orc's use of dark magic...
+
+    ...try fire with fire?...
+
+    ...all is lost!
+
+room::loot
+    As you walk through this room something catches your eye!
+
+    Investigating, you discover an old book among the detritus of the 
+    dungeon.  You eagerly open the book and read what is inside.
+
+room::finalquake
+    A powerful earthquake shakes the cavern around you!
+
+    Rocks fall from the ceiling and block your return path.  It seems it is
+    time for your final push!  Leave no orc behind to dig the way out!
+
+shop::healer
+     Welcome to my hospice, child!
+
+     I would gladly heal you for free 
+     if you would give your word not 
+     to venture back into that cave.  
+    
+     But there is no point to lead you 
+     into temptation.  Instead, I shall 
+     compromise.  I will not try to stop 
+     your sorties provided you pay for 
+     treatment up front!
+
+shop::smith
+     Welcome to my forge!
+
+     Not much need for weapons and
+     armour here, so I have none for
+     sale.  But if you should find
+     any broken, I can repair it for
+     you.
+
+     I will need to charge for the cost
+     of materials, however!
+
+shop::fletcher
+     Welcome to my humble abode!
+
+     I have plenty of arrows for sale.
+     I suspect you'll need them, it
+     is best to attack monsters before
+     they get to you.
+
+     I can also repair any bows that
+     you may find broken in the caves.
+
+shop::elder
+     Welcome my wayward 'adventurer'.
+
+     So you seek to disturb what I advise
+     should be left undisturbed?  Well,
+     such is the privilege of youth.
+    
+     Do not compound your folly!  Listen
+     to what I have to tell you of the
+     dangers you may face.
+
+gossip::intro
+    As you know from your own experience, a few weeks ago we were all awakened
+    by a powerful earthquake.  Caught up with the effort of fixing the damaged
+    buildings, it was only a few days ago that our fletcher found the cave.
+
+    It appears to be very deep.  The air is not stagnant, suggesting there are
+    other openings.  Rats and other vermin were reported,.
+
+    What you know only from rumour is the legends.  According to our secret
+    village histories (secret from outsiders, not from you or I, of
+    course) many generations ago we faced a desperate battle.  Vicious
+    orcs had streamed out of a cave in the mountains.  Only after
+    great dint of battle were they repulsed.  The cave was collapsed.
+    And we have lived in peace ever since.
+
+    Now there is no reason to suppose this is the same cave complex.  Or that
+    the orcs are still at the other end.  Or that the legend is even true!
+    Thus, prudence states that we should guard the cave until spring opens us
+    to foreign travel.  We will then ask for help from an 'adventurer'.  Let
+    them take the risk, and we can enjoy the profit of overcharging for
+    supplies.
+
+    But, I see, your heart is set.  You see yourself as an adventurer.
+    Take care.  Do not let your eyes be clouded by easy riches.
+
+gossip::meditate
+    Surely you recall the sacred isle?  The one at the end of the path
+    next to the smith's forge?  Where you took your oath on your name
+    day to respect the rules of the village?
+
+    It is a spot of great power for our village, so must always
+    be treated with respect and decorum.
+
+gossip::impass
+    The pass should be starting to clear.  But it is not!  Normally
+    I would not fret - we have enough food stockpiled to last us until
+    midsummer.  But with this cave looming at the edge of our village?
+
+    The sooner we can get some real adventurers here, the better.  It
+    seems, however, that at this rate you have little fear of competition
+    for a long time.
+
+gossip::sickness
+    Our healer has been busy of late!  An increasing number of villagers 
+    have been falling ill.  With first planting under way, this is not a 
+    good time to have our farmers sick.
+
+    Some suspect a deadly miasma escaping from the cave is to blame.
+    Please keep your eyes open while traveling in there - if you
+    can find a cause, perhaps our healer can find a cure?
+
+gossip::cold
+    I fear there may be something to the legends of the cave.  This
+    cold is definitely not natural.  The weather signs and portents,
+    which I have learned to auger well, did not call for this sudden
+    onslaught of cold!
+
+    The farmers are particularly worried.  If a strong frost were to
+    occur we could lose all the seedlings in the field!
+
+    I know I objected to your adventure, but it seems you may have been
+    right - I can only hope now that you'll fix the source of this
+    unnatural cold.
+
+gossip::orcs
+    I did warn you that this cave is most likely unrelated to the cave of
+    legend!
+
+    It also should not surprise you over much to end up where you
+    started, with the way twisted subterranean passages work.  I am
+    just happy you ended up somewhere safe.
+
+    Though, if you wish, I'm sure I could invent some moral message here.
+    About how no matter how far you travel you will always be at home?
+
+    Not interested?  I thought not.
+
+    But do enjoy your gold and [v]ictory!  You have earned it.
+    
